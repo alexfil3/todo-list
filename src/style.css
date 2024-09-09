@@ -1,3 +1,21 @@
+:root {
+    /* text sizes */
+
+    --16px: 1rem;
+    --17px: 1.0625rem;
+    --18px: 1.125rem;
+    --19px: 1.1875rem;
+    --20px: 1.25rem;
+    --21px: 1.3125rem;
+
+    /* color palette */
+
+    --main-bg-color: #121212;
+    --secondary-bg-color: #1B1F3B;
+    --hover-bg-color: #2A2D34;
+    --main-text-color: #F1F1F1;
+}
+
 /* Reset and base styles  */
 * {
 	padding: 0px;
@@ -165,15 +183,18 @@ legend {
 svg {
     width: 24px;
     height: 24px;
-    background-color: brown;
+    background-color: rgb(33, 30, 30);
+    border-radius: 50%;
 }
 
 body {
   height: 100vh;
   font-family: "ubunturegular", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: var(--16px);
+  line-height: 1.6;
   letter-spacing: 0.12rem;
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
 }
 
 .container {
@@ -186,9 +207,8 @@ body {
     /* position: absolute; */
     width: 260px;
     height: 100%;
-    background-color: rgb(69, 64, 64);
-    color: whitesmoke;
     padding: 20px;
+    background-color: var(--secondary-bg-color);
 }
 
 .close-aside {
@@ -206,7 +226,8 @@ body {
 
 .title {
     font-family: "ubuntubold", sans-serif;
-    font-size: 1.4rem;
+    font-size: var(--21px);
+    color: #F1F1F1;
 }
 
 .nav {
@@ -232,23 +253,28 @@ body {
 
 .nav-button:hover,
 .nav-button:focus {
-    background-color: rgb(11, 11, 84);
+    background-color: var(--hover-bg-color);
 }
 
 .projects-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-family: "ubuntubold", sans-serif;
-    font-size: 1.2rem;
+    font-size: var(--19px);
+}
+
+.add-project-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .content {
     width: 100%;
-    background-color: aqua;
 }
 
 .content-inner {
     width: 800px;
     margin: 0 auto;
-    background-color: bisque;
 }
