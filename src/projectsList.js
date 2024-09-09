@@ -1,4 +1,4 @@
-import findItem from "./helpers/findItem";
+// import findItem from "./helpers/findItem";
 import removeItem from "./helpers/removeItem";
 
 function projectsList() {
@@ -16,9 +16,9 @@ function projectsList() {
         removeItem(id, projectsList)
     }
 
-    function getProjectById(projectId) {
-        return findItem(projectId, projectsList)
-    }
+    // function getProjectById(projectId) {
+    //     return findItem(projectId, projectsList)
+    // }
 
     function moveTodoItem(projectFrom, projectTo, todoItem) {
         projectTo.addTodoItem(todoItem)

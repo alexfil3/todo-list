@@ -54,6 +54,7 @@ address {
 input, textarea, button, select {
 	font-family: inherit;
     font-size: inherit;
+    letter-spacing: inherit;
     color: inherit;
     background-color: transparent;
 }
@@ -161,6 +162,93 @@ legend {
 
 }
 
+svg {
+    width: 24px;
+    height: 24px;
+    background-color: brown;
+}
+
 body {
+  height: 100vh;
   font-family: "ubunturegular", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.12rem;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+.aside {
+    /* position: absolute; */
+    width: 260px;
+    height: 100%;
+    background-color: rgb(69, 64, 64);
+    color: whitesmoke;
+    padding: 20px;
+}
+
+.close-aside {
+    display: none;
+    transition: all 3000ms ease;
+    transform: translateX(-100%);
+}
+
+.title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.title {
+    font-family: "ubuntubold", sans-serif;
+    font-size: 1.4rem;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.nav-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 6px;
+    border-radius: 12px;
+}
+
+.nav-button:hover,
+.nav-button:focus {
+    background-color: rgb(11, 11, 84);
+}
+
+.projects-title {
+    display: flex;
+    justify-content: space-between;
+    font-family: "ubuntubold", sans-serif;
+    font-size: 1.2rem;
+}
+
+.content {
+    width: 100%;
+    background-color: aqua;
+}
+
+.content-inner {
+    width: 800px;
+    margin: 0 auto;
+    background-color: bisque;
 }
