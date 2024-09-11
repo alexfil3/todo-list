@@ -1,25 +1,18 @@
+import mainElement from "../components/main";
+import titleForPage from "../components/titleForPage";
+import addButton from "../components/addButton";
+
 function allTasks() {
     const content = document.querySelector("#content");
+    content.textContent = "";
 
-    const div = document.createElement("div");
-    div.classList.add("content-inner")
+    const main = mainElement();
+    const title = titleForPage("All tasks");
+    const button = addButton("Add task");
 
-    const title = document.createElement("h2");
-    title.textContent = "All Tasks";
-    
-    const button = document.createElement("button");
-    const svg = document.createElement("svg");
-    const use = document.createElement("use");
-    const text = document.createElement("p");
-    text.textContent = "Add task";
-
-    div.appendChild(title);
-    svg.appendChild(use);
-    button.appendChild(svg);
-    button.appendChild(text);
-    div.appendChild(button);
-    
-    content.appendChild(div);
+    main.appendChild(title);
+    main.appendChild(button);
+    content.appendChild(main);
 }
 
 export default allTasks;
