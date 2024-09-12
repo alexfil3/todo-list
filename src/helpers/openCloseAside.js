@@ -1,4 +1,4 @@
-import createOpenAsideBtn from "../helpers/createOpenAsideBtn";
+import createOpenAsideBtn from "./createOpenAsideBtn";
 
 const content = document.querySelector(".content");
 const aside = document.querySelector(".aside");

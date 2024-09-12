@@ -1,5 +1,5 @@
 import allTasks from "./pages/allTasks";
-import { closeAside } from "./actionButtons/openCloseAside";
+import { closeAside } from "./helpers/openCloseAside";
 import loadPage from "./helpers/loadPage";
 import "./style.css";
 

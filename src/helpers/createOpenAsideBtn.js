@@ -1,4 +1,4 @@
-import { openAside } from "../actionButtons/openCloseAside";
+import { openAside } from "./openCloseAside";
 
 function createOpenAsideBtn() {
     const content = document.querySelector(".content");
