@@ -17,7 +17,7 @@
     --secondary-bg-color: #1B1F3B;
     --hover-bg-color: #2A2D34;
     --main-text-color: #F1F1F1;
-    --add-task-color: #C9A635;
+    --secondary-text-color: #C9A635;
 }
 
 /* Reset and base styles  */
@@ -194,7 +194,161 @@ body {
   background-color: var(--main-bg-color);
 }
 
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .container {
+    display: flex;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 260px;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: var(--secondary-bg-color);
+    transition: transform 300ms ease;
+}
+
+.header-and-main-wrapper {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    padding: 26px;
+    background-color: transparent;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 76px);
+    width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+    border: 1px solid wheat;
+}
+
+.main-title-and-buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-title {
+    font-family: "ubuntubold", sans-serif;
+    font-size: var(--21px);
+    color: var(--secondary-text-color);
+}
+
+.buttons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.theme-button {}
+
+.svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: #2A2D34;
+    border-radius: 50%;
+}
+
+.close-aside-button {}
+
+.add-task-and-pages-wrapper {}
+
+.add-task-button, .pages-list-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 6px 12px;
+    border-radius: 12px;
+}
+
+.add-task-button {
+    font-family: "ubuntubold", sans-serif;
+    color: var(--secondary-text-color);
+    margin-bottom: 16px;
+}
+
+.pages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pages-list-item {}
+
+.project-add-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 100%;
+    font-size: var(--18px);
+    padding: 6px 0;
+}
+
+.header-buttons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+} 
+
+.header-button-change {}
+
+.header-button-delete {}
+
+.main-page-title {
+    font-family: "ubuntubold", sans-serif;
+    font-size: var(--48px);
+    margin-bottom: 20px;
+}
+
+.main-add-task-btn {
+    font-family: "ubuntubold", sans-serif;
+    font-size: var(--21px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary-text-color);
+}
+
+.active-page-button {
+    background-color: var(--hover-bg-color);
+}
+
+.close-aside {
+    position: absolute;
+    transform: translateX(-100%);
+}
+
+.open-aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* top: 22px;
+    left: 22px; */
+    padding: 22px;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+/* .container {
     display: flex;
     height: 100vh;
     position: relative;
@@ -215,7 +369,7 @@ body {
 
 /* temporary solution */
 
-#close-aside-btn, #open-aside-btn {
+/* #close-aside-btn, #open-aside-btn {
     background-color: #F1F1F1;
 }
 
@@ -234,11 +388,11 @@ svg {
     height: 24px;
     background-color: rgb(33, 30, 30);
     border-radius: 50%;
-}
+} */
 
-/*  */
 
-.title-wrapper {
+
+/* .title-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -248,9 +402,9 @@ svg {
 .title {
     font-family: "ubuntubold", sans-serif;
     font-size: var(--21px);
-}
+} */
 
-.title-wrapper-buttons {
+/* .title-wrapper-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -271,9 +425,9 @@ svg {
 
 .nav-tasks-item:first-child {
     color: var(--add-task-color);
-}
+} */
 
-.nav-button {
+/* .nav-button {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -298,9 +452,9 @@ svg {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
-.content {
+/* .content {
     flex-grow: 1;
 }
 
@@ -324,9 +478,9 @@ svg {
     align-items: center;
     gap: 8px;
     color: var(--add-task-color);
-}
+} */
 
-.main-add-task-btn svg {
+/* .main-add-task-btn svg {
     width: 32px;
     height: 32px;
 }
@@ -334,17 +488,18 @@ svg {
 .dialog {
     margin: auto;
     border-radius: 20px;
-    width:600px;
+    width: 800px;
     padding: 24px;
     background-color: var(--secondary-bg-color);
     color: var(--main-text-color);
+    overflow: visible;
 }
 
 .dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.4);
-}
+    background-color: rgba(0, 0, 0, 0.4); */
+/* } */
 
-.visually-hidden {
+/* .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -372,9 +527,9 @@ svg {
     border: none;
     outline: none;
     resize: none
-}
+} */
 
-.textarea-description::-webkit-scrollbar {
+/* .textarea-description::-webkit-scrollbar {
   width: 10px;
 }
 
@@ -392,23 +547,23 @@ svg {
     display: flex;
     align-items: center;
     gap: 20px;
-}
+} */
 
-.datepicker-toggle {
+/* .datepicker-toggle {
     display: block;
     position: relative;
     padding: 6px 12px;
-    border: 1px solid var(--main-text-color);
+    border: 2px solid var(--main-text-color);
     border-radius: 6px;
-}
-.datepicker-toggle-button {
+} */
+/* .datepicker-toggle-button {
     display: flex;
     gap: 12px;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.datepicker-input {
+/* .datepicker-input {
     position: absolute;
     left: 0;
     top: 0;
@@ -417,8 +572,8 @@ svg {
     opacity: 0;
     cursor: pointer;
     box-sizing: border-box;
-}
-.datepicker-input::-webkit-calendar-picker-indicator {
+} */
+/* .datepicker-input::-webkit-calendar-picker-indicator {
     position: absolute;
     left: 0;
     top: 0;
@@ -427,22 +582,65 @@ svg {
     margin: 0;
     padding: 0;
     cursor: pointer;
-}
+} */
 
-.settings-item {
+/* .settings-item1 {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
     padding: 6px 12px;
-    border: 1px solid var(--main-text-color);
+    border: 2px solid var(--main-text-color);
     border-radius: 6px;
-}
+} */
 
-.green {
+/* .settings-item2 {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    border: 2px solid var(--main-text-color);
+    border-radius: 6px;
+} */
+
+/* .green {
     border: 2px solid green;
-}
+} */
 
-.red {
+/* .red {
     border: 2px solid red;
+} */
+
+/* .yellow {
+    border: 2px solid orange;
+} */
+
+/* .priority-wrapper {
+    position: relative;
+} */
+
+/* .settings-list1 {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    top: 46px;
+    left: 0;
+    padding: 8px;
+    width: 160px;
+    background-color: var(--secondary-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+} */
+
+/* .settings-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
-.yellow {
-    border: 2px solid orange;
-}
+.flex {
+    display: flex;
+}  */

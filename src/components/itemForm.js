@@ -3,8 +3,9 @@ import input from "./input";
 import label from "./label";
 import textarea from "./textarea";
 import datepicker from "./datepicker";
-import paragraph from "./paragraph";
 import button from "./button";
+import priorityList from "../components/priorityList";
+import showPriorityList from "../helpers/showPriorityList";
 
 function itemForm() {
     const form = document.createElement("form");
@@ -20,8 +21,11 @@ function itemForm() {
 
     const div3 = div("item-settings");
     const dateInput = datepicker();
-    const priority = paragraph("Priority", "settings-item");
-    const project = paragraph("Project", "settings-item");
+    const div5 = div("priority-wrapper");
+    const div6 = div("project-wrapper");
+    const priority = button("Priority", "settings-item1");
+    const project = button("Project", "settings-item2");
+    const priorityListEl = priorityList();
 
     const div4 = div();
     const cancelButton = button("Cancel");
@@ -34,8 +38,11 @@ function itemForm() {
     div2.appendChild(inputDescription);
 
     div3.appendChild(dateInput);
-    div3.appendChild(priority);
-    div3.appendChild(project);
+    div5.appendChild(priority);
+    div5.appendChild(priorityListEl);
+    div6.appendChild(project);
+    div3.appendChild(div5);
+    div3.appendChild(div6);
 
     div4.appendChild(cancelButton);
     div4.appendChild(addButton);
@@ -44,6 +51,8 @@ function itemForm() {
     form.appendChild(div2);
     form.appendChild(div3);
     form.appendChild(div4);
+
+    priority.addEventListener("click", showPriorityList);
 
     return form;
 }

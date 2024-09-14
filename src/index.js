@@ -1,12 +1,14 @@
-import allTasks from "./pages/allTasks";
-import { closeAside } from "./helpers/openCloseAside";
-import loadPage from "./helpers/loadPage";
+import Layout from "./pages/Layout";
+import All from "./pages/All";
+// import { closeAside } from "./helpers/openCloseAside";
 import "./style.css";
 
-allTasks();
+// create layout
+Layout();
 
-const closeAsideBtn = document.querySelector("#close-aside-btn");
-closeAsideBtn.addEventListener("click", closeAside);
+// first page render
+All();
 
-const nav = document.querySelector(".nav");
-nav.addEventListener("click", loadPage);
+
+// const closeAsideBtn = document.querySelector("#close-aside-btn");
+// closeAsideBtn.addEventListener("click", closeAside);

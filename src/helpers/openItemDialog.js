@@ -12,6 +12,10 @@ function openItemDialog() {
     container.appendChild(dialog);
 
     dialog.showModal();
+
+    dialog.addEventListener("close", () => {
+        dialog.close();
+    })
 }
 
 export default openItemDialog;
