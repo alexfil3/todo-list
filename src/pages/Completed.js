@@ -1,7 +1,7 @@
 import Title from "../newComponents/Title";
 import Button from "../newComponents/Button";
 import removeClass from "../newHelpers/removeClass";
-import openItemDialog from "../helpers/openItemDialog";
+// import openItemDialog from "../helpers/openItemDialog";
 
 function Completed() {
     // find and clear content before appending child to it

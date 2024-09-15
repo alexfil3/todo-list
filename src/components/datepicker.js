@@ -1,21 +1,21 @@
 import buttonDate from "./button";
 import inputDate from "./input";
-import showDateValue from "../helpers/showDateValue";
+import showDateValue from "../newHelpers/showDateValue";
 
 function datepicker() {
-    const outerSpan = document.createElement("span");
-    const button = buttonDate("Due to", "datepicker-toggle-button");
-    const input = inputDate("date");
+    // const outerSpan = document.createElement("span");
+    // const button = buttonDate("Due to", "datepicker-toggle-button");
+    // const input = inputDate("date");
 
-    outerSpan.classList.add("datepicker-toggle");
-    input.classList.add("datepicker-input");
+    // outerSpan.classList.add("datepicker-toggle");
+    // input.classList.add("datepicker-input");
 
-    outerSpan.appendChild(button);
-    outerSpan.appendChild(input);
+    // outerSpan.appendChild(button);
+    // outerSpan.appendChild(input);
 
-    input.addEventListener("input", showDateValue)
+    // input.addEventListener("input", showDateValue)
     
-    return outerSpan;
+    // return outerSpan;
 }
 
 export default datepicker;

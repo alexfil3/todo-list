@@ -8,6 +8,8 @@ import List from "../newComponents/List";
 import createPagesList from "../newHelpers/createPagesList";
 import loadPage from "../newHelpers/loadPage";
 import { closeAside } from "../newHelpers/openCloseAside";
+import openDialog from "../newHelpers/openDialog";
+import createAddTaskDialog from "../newHelpers/createAddTaskDialog";
 
 function Layout() {
     const container = document.querySelector("#container");
@@ -25,7 +27,7 @@ function Layout() {
 
     // create block with add task button and list of different sort of tasks
     const addTaskAndPagesWrapper = Div("add-task-and-pages-wrapper");
-    const addTaskButton = Button("add-task-button", "Add task", "addTask", "../alien-svgrepo-com.svg", "svg");
+    const addTaskButton = Button("add-task-button", "Add task", "addTask", "../alien-svgrepo-com.svg", "svg", () => openDialog(createAddTaskDialog));
     const pagesList = List("pages-list", loadPage);
     const createdList = createPagesList(pagesList, "pages-list-item", "pages-list-button");
 

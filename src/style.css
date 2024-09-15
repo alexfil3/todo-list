@@ -18,6 +18,9 @@
     --hover-bg-color: #2A2D34;
     --main-text-color: #F1F1F1;
     --secondary-text-color: #C9A635;
+    --green-color: #008000;
+    --yellow-color: #ffde21;
+    --red-color: #cd1c18;
 }
 
 /* Reset and base styles  */
@@ -340,10 +343,185 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    /* top: 22px;
-    left: 22px; */
     padding: 22px;
 }
+
+.add-task-dialog {
+    margin: auto;
+    border-radius: 20px;
+    width: 800px;
+    padding: 40px;
+    background-color: var(--secondary-bg-color);
+    color: var(--main-text-color);
+    overflow: visible;
+}
+
+.add-task-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.add-task-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+  
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.task-name-input {
+    width: 100%;
+    font-size: var(--24px);
+    margin-bottom: 20px;
+    color: var(--secondary-text-color);
+}
+
+.task-description-textarea {
+    width: 100%;
+    height: 60px;
+    font-size: var(--18px);
+    margin-bottom: 32px;
+    border: none;
+    outline: none;
+    resize: none
+}
+
+.task-description-textarea::-webkit-scrollbar {
+    width: 10px;
+}
+
+.task-description-textarea::-webkit-scrollbar-track {
+    background: var(--hover-bg-color);
+    border-radius: 20px;
+}
+
+.task-description-textarea::-webkit-scrollbar-thumb {
+    background: var(--secondary-text-color);
+    border-radius: 20px;
+}
+
+.settings-list {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.settings-list-item {}
+
+.settings-list-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border: 1px solid var(--main-text-color);
+    border-radius: 6px;
+}
+
+.datepicker-toggle {
+    position: relative;
+    padding: 8px 12px;
+    border: 1px solid var(--main-text-color);
+    border-radius: 6px;
+}
+
+.datepicker-toggle-button {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.datepicker-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.datepicker-input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+} 
+
+.add-task-buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.cancel-task-button, .dialog-add-task-button {
+    width: 100px;
+    padding: 12px 0;
+    border-radius: 12px;
+    background-color: var(--hover-bg-color);
+}
+
+.dialog-add-task-button {
+    background-color: var(--secondary-text-color);
+}
+
+.green {
+    border: 2px solid var(--green-color);
+    color: var(--green-color);
+}
+
+.yellow {
+    border: 2px solid var(--yellow-color);
+    color: var(--yellow-color);
+}
+
+.red {
+    border: 2px solid var(--red-color);
+    color: var(--red-color);
+}
+
+.priority-wrapper {
+    position: relative;
+}
+
+.priority-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    top: 46px;
+    left: 0;
+    width: 200px;
+    border-radius: 6px;
+    padding: 20px;
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.priority-list-item {}
+
+.priority-list-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.project-wrapper {}
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
