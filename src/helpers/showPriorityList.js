@@ -1,4 +1,4 @@
-import List from "../newComponents/List";
+import List from "../components/List";
 import createPriorityList from "./createPriorityList";
 import selectPriority from "./selectPriority";
 

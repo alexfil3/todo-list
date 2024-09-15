@@ -1,6 +1,6 @@
-import Div from "../newComponents/Div";
-import Button from "../newComponents/Button";
-import Input from "../newComponents/Input";
+import Div from "../components/Div";
+import Button from "../components/Button";
+import Input from "../components/Input";
 import showDateValue from "./showDateValue";
 
 function createDatePicker() {

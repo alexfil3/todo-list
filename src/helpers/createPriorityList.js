@@ -1,5 +1,5 @@
-import ListItem from "../newComponents/ListItem";
-import Button from "../newComponents/Button";
+import ListItem from "../components/ListItem";
+import Button from "../components/Button";
 
 const priorities = [
     { priority: "High", id: "high", color: "#cd1c18", },

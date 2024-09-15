@@ -1,4 +1,4 @@
-import List from "../newComponents/List";
+import List from "../components/List";
 import selectProject from "./selectProject";
 
 function showProjectList(e) {
