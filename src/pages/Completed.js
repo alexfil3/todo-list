@@ -1,6 +1,6 @@
-import Title from "../newComponents/Title";
-import Button from "../newComponents/Button";
-import removeClass from "../newHelpers/removeClass";
+import Title from "../components/Title";
+import Button from "../components/Button";
+import removeClass from "../helpers/removeClass";
 // import openItemDialog from "../helpers/openItemDialog";
 
 function Completed() {

@@ -1,5 +1,5 @@
-import ListItem from "../newComponents/ListItem";
-import Button from "../newComponents/Button";
+import ListItem from "../components/ListItem";
+import Button from "../components/Button";
 
 const pages = ["All", "Today", "Upcoming", "Completed", "Notes"];
 

@@ -1,4 +1,4 @@
-import Button from "../newComponents/Button";
+import Button from "../components/Button";
 import { openAside } from "./openCloseAside";
 
 function createOpenAsideBtn() {

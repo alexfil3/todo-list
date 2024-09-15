@@ -1,8 +1,8 @@
-import Title from "../newComponents/Title";
-import Button from "../newComponents/Button";
-import removeClass from "../newHelpers/removeClass";
-import openDialog from "../newHelpers/openDialog";
-import createAddTaskDialog from "../newHelpers/createAddTaskDialog";
+import Title from "../components/Title";
+import Button from "../components/Button";
+import removeClass from "../helpers/removeClass";
+import openDialog from "../helpers/openDialog";
+import createAddTaskDialog from "../helpers/createAddTaskDialog";
 
 function All() {
     // find and clear content before appending child to it

@@ -1,11 +1,11 @@
-import Dialog from "../newComponents/Dialog";
-import Form from "../newComponents/Form";
-import Label from "../newComponents/Label";
-import Input from "../newComponents/Input";
-import Textarea from "../newComponents/Textarea";
-import List from "../newComponents/List";
-import Div from "../newComponents/Div";
-import Button from "../newComponents/Button";
+import Dialog from "../components/Dialog";
+import Form from "../components/Form";
+import Label from "../components/Label";
+import Input from "../components/Input";
+import Textarea from "../components/Textarea";
+import List from "../components/List";
+import Div from "../components/Div";
+import Button from "../components/Button";
 import createSettingsList from "./createSettingsList";
 
 function createAddTaskDialog() {

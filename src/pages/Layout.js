@@ -1,15 +1,15 @@
-import Aside from "../newComponents/Aside";
-import Main from "../newComponents/Main";
-import Header from "../newComponents/Header";
-import Div from "../newComponents/Div";
-import Title from "../newComponents/Title";
-import Button from "../newComponents/Button";
-import List from "../newComponents/List";
-import createPagesList from "../newHelpers/createPagesList";
-import loadPage from "../newHelpers/loadPage";
-import { closeAside } from "../newHelpers/openCloseAside";
-import openDialog from "../newHelpers/openDialog";
-import createAddTaskDialog from "../newHelpers/createAddTaskDialog";
+import Aside from "../components/Aside";
+import Main from "../components/Main";
+import Header from "../components/Header";
+import Div from "../components/Div";
+import Title from "../components/Title";
+import Button from "../components/Button";
+import List from "../components/List";
+import createPagesList from "../helpers/createPagesList";
+import loadPage from "../helpers/loadPage";
+import { closeAside } from "../helpers/openCloseAside";
+import openDialog from "../helpers/openDialog";
+import createAddTaskDialog from "../helpers/createAddTaskDialog";
 
 function Layout() {
     const container = document.querySelector("#container");
