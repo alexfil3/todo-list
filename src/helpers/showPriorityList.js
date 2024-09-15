@@ -1,13 +1,15 @@
+import List from "../newComponents/List";
+import createPriorityList from "./createPriorityList";
+import selectPriority from "./selectPriority";
+
 function showPriorityList(e) {
     e.preventDefault();
 
-    const ul = document.querySelector(".settings-list1");
-    if (ul.classList.contains("flex")) {
-        ul.classList.remove("flex");
-        return
-    }
-    
-    ul.classList.add("flex");
+    const priorityWrapper = document.querySelector(".priority-wrapper");
+    const list = List("priority-list", selectPriority);
+    const priorityList = createPriorityList(list, "priority-list-item", "priority-list-button");
+
+    priorityWrapper.appendChild(priorityList);
 }
 
 export default showPriorityList;
