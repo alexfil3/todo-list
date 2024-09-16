@@ -494,11 +494,11 @@ body {
     color: var(--red-color);
 }
 
-.priority-wrapper {
+.priority-wrapper, .project-wrapper {
     position: relative;
 }
 
-.priority-list {
+.priority-list, .project-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -512,17 +512,18 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.priority-list-item {}
+.priority-list-item, .project-list-item {}
 
-.priority-list-button {
+.priority-list-button, .project-list-button {
     display: flex;
     align-items: center;
     gap: 12px;
     width: 100%;
 }
 
-.project-wrapper {}
-
+.hide {
+    display: none;
+}
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 

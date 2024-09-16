@@ -1,9 +1,13 @@
+import closeList from "./closeList";
+
 function selectPriority(e) {
     e.preventDefault();
 
     const priorityButton = document.querySelector("#priority");
     const button = e.target.closest("button");
     const buttonText = priorityButton.querySelector("p");
+    const priorityList = document.querySelector(".priority-list");
+    const priorityWrapper = document.querySelector(".priority-wrapper");
     
     if (!button) {
         return
@@ -37,6 +41,8 @@ function selectPriority(e) {
         default:
             return;
     }
+
+    closeList(priorityList, priorityWrapper);
 }
 
 export default selectPriority;

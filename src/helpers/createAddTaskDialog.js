@@ -15,7 +15,7 @@ function createAddTaskDialog() {
     const taskNameInput = Input("text", "task-name-input", "Task name");
     const taskDescriptionLabel = Label("Description", "visually-hidden");
     const taskDescriptionTextarea = Textarea("task-description-textarea", "Description");
-    const settingsList = List("settings-list", () => console.log("hello"));
+    const settingsList = List("settings-list");
     const createdList = createSettingsList(settingsList, "settings-list-item", "settings-list-button");
     const addTaskButtonsWrapper = Div("add-task-buttons-wrapper");
     const cancelTaskButton = Button("cancel-task-button", "Cancel", "cancelTaskButton", "", "", () => console.log("cancel"));

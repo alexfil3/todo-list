@@ -1,13 +1,14 @@
+import ListItem from "../components/ListItem";
+import Button from "../components/Button";
+
+const projects = [{ name: "No project", id: "noProject" },];
+
 function createProjectList(list, listItemClassName, buttonClassName) {
     const listToAppend = list;
 
-    priorities.forEach(({priority, id, color}) => {
+    projects.forEach(({name, id}) => {
         const listItem = ListItem(listItemClassName);
-        const button = Button(buttonClassName, priority, id, "../alien-svgrepo-com.svg", "svg");
-
-        if (color) {
-            button.style.color = color;
-        }
+        const button = Button(buttonClassName, name, id, "../alien-svgrepo-com.svg", "svg");
 
         listItem.appendChild(button);
         listToAppend.appendChild(listItem);
@@ -15,3 +16,5 @@ function createProjectList(list, listItemClassName, buttonClassName) {
 
     return listToAppend;
 }
+
+export default createProjectList;
