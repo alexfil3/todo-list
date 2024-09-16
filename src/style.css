@@ -543,6 +543,18 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.button-and-project-name-wrapper {}
+
+.color-button {}
+
+.project-name-input {}
+
+.add-project-buttons-wrapper {}
+
+.cancel-project-button {}
+
+.dialog-add-project-button {}
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 

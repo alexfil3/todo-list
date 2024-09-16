@@ -10,6 +10,7 @@ import loadPage from "../helpers/loadPage";
 import { closeAside } from "../helpers/openCloseAside";
 import openDialog from "../helpers/openDialog";
 import createAddTaskDialog from "../helpers/createAddTaskDialog";
+import createAddProjectDialog from "../helpers/createAddProjectDialog";
 
 function Layout() {
     const container = document.querySelector("#container");
@@ -32,7 +33,7 @@ function Layout() {
     const createdList = createPagesList(pagesList, "pages-list-item", "pages-list-button");
 
     // create block with project title and button to add a project
-    const projectAddButton = Button("project-add-button", "Projects", "projectAddButton", "../alien-svgrepo-com.svg", "svg");
+    const projectAddButton = Button("project-add-button", "Projects", "projectAddButton", "../alien-svgrepo-com.svg", "svg", () => openDialog(createAddProjectDialog));
 
     // create two buttons for header
     const headerButtonsWrapper = Div("header-buttons-wrapper"); 

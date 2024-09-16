@@ -1,32 +1,30 @@
 import Dialog from "../components/Dialog";
 import Form from "../components/Form";
+import Div from "../components/Div";
 import Label from "../components/Label";
 import Input from "../components/Input";
-import List from "../components/List";
-import Div from "../components/Div";
 import Button from "../components/Button";
-import createSettingsList from "./createSettingsList";
+import toggleColorList from "./toggleColorList";
 
 function createAddProjectDialog() {
     const dialog = Dialog("add-project-dialog"); 
     const form = Form("dialog", "add-project-form");
+    const buttonAndProjectNameWrapper = Div("button-and-project-name-wrapper");
+    const colorButton = Button("color-button", "", "colorButton", "../alien-svgrepo-com.svg", "svg", toggleColorList);
     const projectNameLabel = Label("Project name", "visually-hidden", "projectNameInput");
     const projectNameInput = Input("text", "project-name-input", "Project name", "projectNameInput");
-    // const settingsList = List("settings-list");
-    // const createdList = createSettingsList(settingsList, "settings-list-item", "settings-list-button");
-    // const addTaskButtonsWrapper = Div("add-task-buttons-wrapper");
-    // const cancelTaskButton = Button("cancel-task-button", "Cancel", "cancelTaskButton", "", "", () => console.log("cancel"));
-    // const addTaskButton = Button("dialog-add-task-button", "Add task", "addTaskButton", "", "", () => console.log("add"));
+    const addProjectButtonsWrapper = Div("add-project-buttons-wrapper");
+    const cancelProjectButton = Button("cancel-project-button", "Cancel", "cancelProjectButton", "", "", () => console.log("cancel"));
+    const addProjectButton = Button("dialog-add-project-button", "Add project", "addProjectButton", "", "", () => console.log("add"));
 
-    form.appendChild(projectNameLabel);
-    // form.appendChild(taskNameInput);
-    // form.appendChild(taskDescriptionLabel);
-    // form.appendChild(taskDescriptionTextarea);
-    // form.appendChild(createdList);
-    // addTaskButtonsWrapper.appendChild(cancelTaskButton);
-    // addTaskButtonsWrapper.appendChild(addTaskButton);
-    // form.appendChild(addTaskButtonsWrapper);
-    // dialog.appendChild(form);
+    buttonAndProjectNameWrapper.appendChild(colorButton);
+    buttonAndProjectNameWrapper.appendChild(projectNameLabel);
+    buttonAndProjectNameWrapper.appendChild(projectNameInput);
+    form.appendChild(buttonAndProjectNameWrapper);
+    addProjectButtonsWrapper.appendChild(cancelProjectButton);
+    addProjectButtonsWrapper.appendChild(addProjectButton);
+    form.appendChild(addProjectButtonsWrapper);
+    dialog.appendChild(form);
 
     return dialog;
 }
