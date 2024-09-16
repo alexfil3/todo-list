@@ -462,20 +462,20 @@ body {
     cursor: pointer;
 } 
 
-.add-task-buttons-wrapper {
+.add-task-buttons-wrapper, .add-project-buttons-wrapper {
     display: flex;
     justify-content: flex-end;
     gap: 20px;
 }
 
-.cancel-task-button, .dialog-add-task-button {
-    width: 100px;
+.cancel-task-button, .dialog-add-task-button, .cancel-project-button, .dialog-add-project-button {
+    width: 120px;
     padding: 12px 0;
     border-radius: 12px;
     background-color: var(--hover-bg-color);
 }
 
-.dialog-add-task-button {
+.dialog-add-task-button, .dialog-add-project-button {
     background-color: var(--secondary-text-color);
 }
 
@@ -528,7 +528,7 @@ body {
 .add-project-dialog {
     margin: auto;
     border-radius: 20px;
-    width: 800px;
+    width: 600px;
     padding: 40px;
     background-color: var(--secondary-bg-color);
     color: var(--main-text-color);
@@ -544,14 +544,43 @@ body {
     flex-direction: column;
 }
 
-.button-and-project-name-wrapper {}
+.button-and-project-name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
 
 .color-button {}
 
-.project-name-input {}
-
-.add-project-buttons-wrapper {}
+.project-name-input {
+    width: 100%;
+    font-size: var(--24px);
+    color: var(--secondary-text-color);
+}
 
 .cancel-project-button {}
 
 .dialog-add-project-button {}
+
+.color-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    position: absolute;
+    top: 72px;
+    left: 40px;
+    width: 160px;
+    border-radius: 6px;
+    padding: 6px;
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.color-list-item {
+    width: 24px;
+    height: 24px;
+}
+
+.color-list-button {}
