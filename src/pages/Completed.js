@@ -1,7 +1,8 @@
 import Title from "../components/Title";
 import Button from "../components/Button";
 import removeClass from "../helpers/removeClass";
-// import openItemDialog from "../helpers/openItemDialog";
+import openDialog from "../helpers/openDialog";
+import createAddTaskDialog from "../helpers/createAddTaskDialog";
 
 function Completed() {
     // find and clear content before appending child to it
@@ -18,14 +19,11 @@ function Completed() {
 
     // call elements that we need on this page
     const title = Title("h2", "Completed", "main-page-title");
-    const button = Button("main-add-task-btn", "Add task", "mainAddTaskButton", "../alien-svgrepo-com.svg", "svg");
+    const button = Button("main-add-task-btn", "Add task", "mainAddTaskButton", "../alien-svgrepo-com.svg", "svg", () => openDialog(createAddTaskDialog));
 
     // append elements
     main.appendChild(title);
     main.appendChild(button);
-
-    // add event listener to the element
-    // button.addEventListener("click", openItemDialog)
 }
 
 export default Completed;
