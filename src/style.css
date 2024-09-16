@@ -524,6 +524,25 @@ body {
 .hide {
     display: none;
 }
+
+.add-project-dialog {
+    margin: auto;
+    border-radius: 20px;
+    width: 800px;
+    padding: 40px;
+    background-color: var(--secondary-bg-color);
+    color: var(--main-text-color);
+    overflow: visible;
+}
+
+.add-project-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.add-project-form {
+    display: flex;
+    flex-direction: column;
+}
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 

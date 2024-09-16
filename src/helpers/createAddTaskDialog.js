@@ -11,10 +11,10 @@ import createSettingsList from "./createSettingsList";
 function createAddTaskDialog() {
     const dialog = Dialog("add-task-dialog"); 
     const form = Form("dialog", "add-task-form");
-    const taskNameLabel = Label("Task name", "visually-hidden");
-    const taskNameInput = Input("text", "task-name-input", "Task name");
-    const taskDescriptionLabel = Label("Description", "visually-hidden");
-    const taskDescriptionTextarea = Textarea("task-description-textarea", "Description");
+    const taskNameLabel = Label("Task name", "visually-hidden", "taskNameInput");
+    const taskNameInput = Input("text", "task-name-input", "Task name", "", "taskNameInput");
+    const taskDescriptionLabel = Label("Description", "visually-hidden", "taskDescriptionTextarea");
+    const taskDescriptionTextarea = Textarea("task-description-textarea", "Description", "taskDescriptionTextarea");
     const settingsList = List("settings-list");
     const createdList = createSettingsList(settingsList, "settings-list-item", "settings-list-button");
     const addTaskButtonsWrapper = Div("add-task-buttons-wrapper");
