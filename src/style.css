@@ -498,14 +498,38 @@ body::-webkit-scrollbar-thumb {
     color: var(--green-color);
 }
 
+.green-text {
+    color: var(--green-color);
+}
+
+.green-shadow {
+    box-shadow: 0 0 10px var(--green-color);
+}
+
 .yellow {
     border: 2px solid var(--yellow-color);
     color: var(--yellow-color);
 }
 
+.yellow-text {
+    color: var(--yellow-color);
+}
+
+.yellow-shadow {
+    box-shadow: 0 0 10px var(--yellow-color);
+}
+
 .red {
     border: 2px solid var(--red-color);
     color: var(--red-color);
+}
+
+.red-text {
+    color: var(--red-color);
+}
+
+.red-shadow {
+    box-shadow: 0 0 10px var(--red-color);
 }
 
 .priority-wrapper, .project-wrapper {
@@ -611,12 +635,13 @@ body::-webkit-scrollbar-thumb {
     gap: 20px;
     padding: 12px 20px;
     border-radius: 12px;
+    height: 200px;
     background-color: var(--secondary-bg-color);
 }
 
 .completed-button {}
 
-.title-and-description-wrapper {
+.title-description-due-date-wrapper {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -636,6 +661,8 @@ body::-webkit-scrollbar-thumb {
     overflow: auto;
 }
 
+.task-due-date {}
+
 .task-description::-webkit-scrollbar {
     width: 10px;
 }
@@ -654,6 +681,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
     height: 100%;
 }
 
@@ -669,3 +697,5 @@ body::-webkit-scrollbar-thumb {
 .delete-button {}
 
 .task-project {}
+
+.task-priority {}
