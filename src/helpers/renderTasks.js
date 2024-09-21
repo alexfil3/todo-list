@@ -23,10 +23,7 @@ function renderTasks() {
     }
 
     if (document.querySelector(".today-tasks-list")) {
-        const todayTasks = allTasks.filter(({ dueDate }) => {
-            isToday(new Date(dueDate));
-        })
-        console.log(todayTasks)
+        const todayTasks = allTasks.filter(({ dueDate }) => isToday(new Date(dueDate)))
         tasksToRender.push(...todayTasks);
         list = document.querySelector(".today-tasks-list");
         list.textContent = "";
