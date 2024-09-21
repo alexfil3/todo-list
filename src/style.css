@@ -623,7 +623,7 @@ body::-webkit-scrollbar-thumb {
 
 .color-list-button {}
 
-.all-tasks-list, .completed-tasks-list, .today-tasks-list {
+.all-tasks-list, .completed-tasks-list, .today-tasks-list, .upcoming-tasks-list {
     display: flex;
     flex-direction: column;
     gap: 40px;

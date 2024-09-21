@@ -29,6 +29,14 @@ function renderTasks() {
         list.textContent = "";
     }
 
+    if (document.querySelector(".upcoming-tasks-list")) {
+        const upcomingTasks = allTasks.filter(({ dueDate }) => isAfter(new Date(dueDate), new Date()))
+        tasksToRender.push(...upcomingTasks);
+        console.log(upcomingTasks)
+        list = document.querySelector(".upcoming-tasks-list");
+        list.textContent = "";
+    }
+
         tasksToRender.forEach(({title, description, dueDate, priority, project}) => {
             const li = ListItem("tasks-list-item");
             const completedButton = Button("completed-button", "", "completedButton", "../alien-svgrepo-com.svg", "svg");
