@@ -11,6 +11,7 @@ import { closeAside } from "../helpers/openCloseAside";
 import openDialog from "../helpers/openDialog";
 import createAddTaskDialog from "../helpers/createAddTaskDialog";
 import createAddProjectDialog from "../helpers/createAddProjectDialog";
+import renderProjects from "../helpers/renderProjects";
 
 function Layout() {
     const container = document.querySelector("#container");
@@ -33,7 +34,9 @@ function Layout() {
     const createdList = createPagesList(pagesList, "pages-list-item", "pages-list-button");
 
     // create block with project title and button to add a project
+    const projectAddButtonAndProjectListWrapper = Div("project-add-button-and-project-list-wrapper");
     const projectAddButton = Button("project-add-button", "Projects", "projectAddButton", "../alien-svgrepo-com.svg", "svg", () => openDialog(createAddProjectDialog));
+    const projectList = List("projects-list", () => console.log("handle projects click"));
 
     // create two buttons for header
     const headerButtonsWrapper = Div("header-buttons-wrapper"); 
@@ -53,7 +56,9 @@ function Layout() {
     aside.appendChild(addTaskAndPagesWrapper);
 
     // append block with project title and button to add a project
-    aside.appendChild(projectAddButton);
+    projectAddButtonAndProjectListWrapper.appendChild(projectAddButton);
+    projectAddButtonAndProjectListWrapper.appendChild(projectList);
+    aside.appendChild(projectAddButtonAndProjectListWrapper);
 
     // append two buttons for header
     headerButtonsWrapper.appendChild(changeProjectButton);
@@ -64,6 +69,8 @@ function Layout() {
     headerAndMainWrapper.appendChild(main);
     container.appendChild(aside);
     container.appendChild(headerAndMainWrapper);
+
+    renderProjects();
 }
 
 export default Layout;

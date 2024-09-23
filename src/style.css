@@ -285,7 +285,7 @@ body::-webkit-scrollbar-thumb {
 
 .add-task-and-pages-wrapper {}
 
-.add-task-button, .pages-list-button {
+.add-task-button, .pages-list-button, .project-list-item-button  {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -300,7 +300,7 @@ body::-webkit-scrollbar-thumb {
     margin-bottom: 16px;
 }
 
-.pages-list {
+.pages-list, .projects-list {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -316,6 +316,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     font-size: var(--18px);
     padding: 6px 0;
+    margin-bottom: 20px;
 }
 
 .header-buttons-wrapper {
@@ -645,7 +646,9 @@ body::-webkit-scrollbar-thumb {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 12px;
+    height: 100%;
 }
 
 .task-title {
@@ -699,3 +702,8 @@ body::-webkit-scrollbar-thumb {
 .task-project {}
 
 .task-priority {}
+
+.project-add-button-and-project-list-wrapper {}
+
+
+.project-list-item {}

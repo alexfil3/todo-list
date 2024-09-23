@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
-import removeItem from "./helpers/removeItem";
+import removeItem from "../helpers/removeItem";
 
-function createProject(name) {
+function createProject(name, color) {
     const id = nanoid();
     const todoList = [];
 
@@ -15,6 +15,10 @@ function createProject(name) {
 
     function setName(newName) {
         name = newName;
+    }
+
+    function getColor() {
+        return color;
     }
 
     function getTodoList() {
@@ -32,6 +36,7 @@ function createProject(name) {
     return {
         getId,
         getName,
+        getColor,
         setName,
         getTodoList,
         addTodoItem,

@@ -5,7 +5,7 @@ import createDatePicker from "./createDatePicker";
 import togglePriorityList from "./togglePriorityList";
 import toggleProjectList from "./toggleProjectList";
 
-const settings = [{text: "Due date", id: "date"}, {text: "No priority", id: "priority"}, {text: "Project", id: "project"},];
+const settings = [{text: "Due date", id: "date"}, {text: "No priority", id: "priority"}, {text: "No project", id: "project"},];
 
 function createSettingsList(list, listItemClassName, buttonClassName) {
     const listToAppend = list;

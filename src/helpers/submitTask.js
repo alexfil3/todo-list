@@ -19,11 +19,10 @@ function submitTask() {
         priority: todoItem.getPriority(),
         project: todoItem.getProject(),
     }
+    
 
     addTaskToLocalStorage(task);
     renderTasks();
-
-
 }
 
 export default submitTask;

@@ -19,7 +19,7 @@ function createAddTaskDialog() {
     const settingsList = List("settings-list");
     const createdList = createSettingsList(settingsList, "settings-list-item", "settings-list-button");
     const addTaskButtonsWrapper = Div("add-task-buttons-wrapper");
-    const cancelTaskButton = Button("cancel-task-button", "Cancel", "cancelTaskButton", "", "", () => console.log("cancel"));
+    const cancelTaskButton = Button("cancel-task-button", "Cancel", "cancelTaskButton", "", "");
     const addTaskButton = Button("dialog-add-task-button", "Add task", "addTaskButton", "", "", submitTask);
 
     form.appendChild(taskNameLabel);

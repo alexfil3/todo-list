@@ -5,6 +5,7 @@ import removeClass from "../helpers/removeClass";
 import openDialog from "../helpers/openDialog";
 import createAddTaskDialog from "../helpers/createAddTaskDialog";
 import renderTasks from "../helpers/renderTasks";
+import manageTasksList from "../helpers/manageTasksList";
 
 function All() {
     const main = document.querySelector("#main");
@@ -18,7 +19,7 @@ function All() {
 
     const title = Title("h2", "All", "main-page-title");
     const button = Button("main-add-task-btn", "Add task", "mainAddTaskButton", "../alien-svgrepo-com.svg", "svg", () => openDialog(createAddTaskDialog));
-    const tasksList = List("all-tasks-list", () => console.log("handle all tasks"));
+    const tasksList = List("all-tasks-list", manageTasksList);
 
     main.appendChild(title);
     main.appendChild(button);
