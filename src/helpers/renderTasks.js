@@ -15,20 +15,22 @@ function renderTasks(project) {
     }
 
     if (project) {
-        const projectTasks = allTasks.filter(task => task.project === project)
+        const projectTasks = allTasks.filter(task => task.project === project && task.completed !== true)
         tasksToRender.push(...projectTasks);
         list = document.querySelector(".project-tasks-list");
         list.textContent = "";
     }
 
     if (document.querySelector(".all-tasks-list")) {
-        tasksToRender.push(...allTasks);
+        const tasks = allTasks.filter(task => task.completed !== true)
+        tasksToRender.push(...tasks);
         list = document.querySelector(".all-tasks-list");
         list.textContent = "";
     }
 
     if (document.querySelector(".completed-tasks-list")) {
-        tasksToRender.push(...allTasks);
+        const tasks = allTasks.filter(task => task.completed === true)
+        tasksToRender.push(...tasks);
         list = document.querySelector(".completed-tasks-list");
         list.textContent = "";
     }
@@ -41,7 +43,7 @@ function renderTasks(project) {
     }
 
     if (document.querySelector(".upcoming-tasks-list")) {
-        const upcomingTasks = allTasks.filter(task => isAfter(new Date(task.dueDate), new Date()) && task)
+        const upcomingTasks = allTasks.filter(task => isAfter(new Date(task.dueDate), new Date()) && task && task.completed !== true)
         tasksToRender.push(...upcomingTasks);
         list = document.querySelector(".upcoming-tasks-list");
         list.textContent = "";

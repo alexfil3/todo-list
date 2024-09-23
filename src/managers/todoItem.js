@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-function createTodoItem(title, description, dueDate, priority, project) {
+function createTodoItem(title, description, dueDate, priority, project, completed) {
   const id = nanoid()
 
   function getId() {
@@ -9,6 +9,10 @@ function createTodoItem(title, description, dueDate, priority, project) {
 
   function getTitle() {
     return title;
+  }
+
+  function getCompleted() {
+    return completed;
   }
 
   function setTitle(newTitle) {
@@ -52,6 +56,7 @@ function createTodoItem(title, description, dueDate, priority, project) {
     getTitle,
     setTitle,
     getDescription,
+    getCompleted,
     setDescription,
     getDueDate,
     setDueDate,

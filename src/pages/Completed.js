@@ -5,6 +5,7 @@ import removeClass from "../helpers/removeClass";
 import openDialog from "../helpers/openDialog";
 import createAddTaskDialog from "../helpers/createAddTaskDialog";
 import renderTasks from "../helpers/renderTasks";
+import manageTasksList from "../helpers/manageTasksList";
 
 function Completed() {
     // find and clear content before appending child to it
@@ -22,7 +23,7 @@ function Completed() {
     // call elements that we need on this page
     const title = Title("h2", "Completed", "main-page-title");
     const button = Button("main-add-task-btn", "Add task", "mainAddTaskButton", "../alien-svgrepo-com.svg", "svg", () => openDialog(createAddTaskDialog));
-    const tasksList = List("completed-tasks-list", () => console.log("handle completed"));
+    const tasksList = List("completed-tasks-list", manageTasksList);
 
     // append elements
     main.appendChild(title);

@@ -4,7 +4,13 @@ import Button from "../components/Button";
 function createProjectList(list, listItemClassName, buttonClassName) {
     const listToAppend = list;
     const localStorageProjects = JSON.parse(localStorage.getItem("projects"));
-    const projects = [...localStorageProjects, {id: "noProject", title: "No project",  color: "",}];
+    let projects = [];
+    if (localStorageProjects) {
+        projects = [...localStorageProjects, {id: "noProject", title: "No project",  color: "",}];
+    } else {
+        projects = [{ id: "noProject", title: "No project", color: "", }];
+    }
+    console.log(projects)
 
     projects.forEach(({id, title, color}) => {
         const listItem = ListItem(listItemClassName);

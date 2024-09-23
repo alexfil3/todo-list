@@ -8,8 +8,9 @@ function submitTask() {
     const dueDate = document.querySelector("#datepickerInput").value;
     const priority = document.querySelector("#priority p").textContent;
     const project = document.querySelector("#project p").textContent;
+    const completed = false;
 
-    const todoItem = createTodoItem(title, description, dueDate, priority, project);
+    const todoItem = createTodoItem(title, description, dueDate, priority, project, completed);
 
     const task = {
         id: todoItem.getId(),
@@ -18,6 +19,7 @@ function submitTask() {
         dueDate: todoItem.getDueDate(),
         priority: todoItem.getPriority(),
         project: todoItem.getProject(),
+        completed: todoItem.getCompleted(),
     }
 
     const projectDiv = document.querySelector(".project-div h2");

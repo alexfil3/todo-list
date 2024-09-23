@@ -1,21 +1,41 @@
+import openDialog from "./openDialog";
+import createAddTaskDialog from "./createAddTaskDialog";
+import renderTasks from "./renderTasks";
+
 function manageTasksList(e) { 
     const allTasks = JSON.parse(localStorage.getItem("tasks"));
     const button = e.target.closest("button");
     if (!button) {
         return;
     }
-    const taskId = e.target.closest("li");
-    console.log(e.target.closest("button"))
-    console.log(e.target.closest("li"))
+    const taskId = e.target.closest("li").id;
+    console.log(taskId)
 
     if (button.id === "completedButton") {
-        const taskToDelete = allTasks.findIndex(({id}) => id === taskId);
-        allTasks.splice(taskToDelete, 1);
+        const completedTask = allTasks.map(task => {
+            if (task.id === taskId) {
+                task.completed = true;
+            }
+
+            return task
+        })
+        localStorage.setItem('tasks', JSON.stringify(completedTask));
+
+        const projectDiv = document.querySelector(".project-div h2");
+        renderTasks(projectDiv && projectDiv.textContent);
     }
 
-    if (button.id === "deleteButton") { }
+    if (button.id === "deleteButton") {
+        const remainTasks = allTasks.filter(task => task.id !== taskId);
+        localStorage.setItem('tasks', JSON.stringify(remainTasks));
 
-    if (button.id === "editButton") {}
+        const projectDiv = document.querySelector(".project-div h2");
+        renderTasks(projectDiv && projectDiv.textContent);
+    }
+
+    if (button.id === "editButton") {
+        openDialog(createAddTaskDialog, );
+    }
 }
 
 export default manageTasksList;
