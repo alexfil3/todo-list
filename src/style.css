@@ -624,7 +624,7 @@ body::-webkit-scrollbar-thumb {
 
 .color-list-button {}
 
-.all-tasks-list, .completed-tasks-list, .today-tasks-list, .upcoming-tasks-list {
+.all-tasks-list, .completed-tasks-list, .today-tasks-list, .upcoming-tasks-list, .project-tasks-list {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -636,7 +636,6 @@ body::-webkit-scrollbar-thumb {
     gap: 20px;
     padding: 12px 20px;
     border-radius: 12px;
-    height: 200px;
     background-color: var(--secondary-bg-color);
 }
 
@@ -659,7 +658,7 @@ body::-webkit-scrollbar-thumb {
 
 .task-description {
     width: 100%;
-    max-height: 80px;
+    max-height: 50px;
     font-size: var(--16px);
     overflow: auto;
 }
@@ -706,4 +705,16 @@ body::-webkit-scrollbar-thumb {
 .project-add-button-and-project-list-wrapper {}
 
 
-.project-list-item {}
+.project-list-item {
+    border-radius: 12px;
+}
+
+.project-div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.project-svg {
+    margin-bottom: 20px;
+}

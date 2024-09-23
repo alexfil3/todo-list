@@ -5,13 +5,20 @@ import Title from "../components/Title";
 import Paragraph from "../components/Paragraph";
 import { isToday, isAfter, isBefore } from "date-fns";
 
-function renderTasks() {
+function renderTasks(project) {
     const allTasks = JSON.parse(localStorage.getItem("tasks"));
     let tasksToRender = [];
     let list;
 
     if (!allTasks) {
         return;
+    }
+
+    if (project) {
+        const projectTasks = allTasks.filter(task => task.project === project)
+        tasksToRender.push(...projectTasks);
+        list = document.querySelector(".project-tasks-list");
+        list.textContent = "";
     }
 
     if (document.querySelector(".all-tasks-list")) {

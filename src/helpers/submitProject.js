@@ -7,6 +7,10 @@ function submitProject() {
     const color = document.querySelector("#colorButton svg").style.backgroundColor;
     const newProject = createProject(title, color);
 
+    if (title === "") {
+        return;
+    }
+
     const project = {
         id: newProject.getId(),
         title: newProject.getName(),

@@ -1,6 +1,9 @@
 function manageTasksList(e) { 
     const allTasks = JSON.parse(localStorage.getItem("tasks"));
     const button = e.target.closest("button");
+    if (!button) {
+        return;
+    }
     const taskId = e.target.closest("li");
     console.log(e.target.closest("button"))
     console.log(e.target.closest("li"))

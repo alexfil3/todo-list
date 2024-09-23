@@ -5,17 +5,30 @@ function selectProject(e) {
 
     const projectButton = document.querySelector("#project");
     const button = e.target.closest("button");
-    const buttonText = projectButton.querySelector("p");
-    const projectList = document.querySelector(".project-list");
-    const projectWrapper = document.querySelector(".project-wrapper");
-    
+
     if (!button) {
         return
     }
+    
+    const text = button.querySelector("p").textContent;
+    const color = button.querySelector("svg").style.backgroundColor;
+    const buttonText = projectButton.querySelector("p");
+    const svg = projectButton.querySelector("svg");
+    const projectList = document.querySelector(".project-list");
+    const projectWrapper = document.querySelector(".project-wrapper");
 
-    if (button.id === "noProject") {
-        buttonText.textContent = "Project";
+    buttonText.textContent = text;
+
+    if (color) {
+        projectButton.style.borderColor = color;
+        projectButton.style.borderWidth = "2px";
+        svg.style.backgroundColor = color;
+    } else {
+        projectButton.style.borderColor = color;
+        projectButton.style.borderWidth = "1px";
+        svg.style.backgroundColor = color;
     }
+    
 
     closeList(projectList, projectWrapper);
 }

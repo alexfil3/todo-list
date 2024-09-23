@@ -12,6 +12,7 @@ import openDialog from "../helpers/openDialog";
 import createAddTaskDialog from "../helpers/createAddTaskDialog";
 import createAddProjectDialog from "../helpers/createAddProjectDialog";
 import renderProjects from "../helpers/renderProjects";
+import selectProjectToRender from "../helpers/selectProjectToRender";
 
 function Layout() {
     const container = document.querySelector("#container");
@@ -36,7 +37,7 @@ function Layout() {
     // create block with project title and button to add a project
     const projectAddButtonAndProjectListWrapper = Div("project-add-button-and-project-list-wrapper");
     const projectAddButton = Button("project-add-button", "Projects", "projectAddButton", "../alien-svgrepo-com.svg", "svg", () => openDialog(createAddProjectDialog));
-    const projectList = List("projects-list", () => console.log("handle projects click"));
+    const projectList = List("projects-list", selectProjectToRender);
 
     // create two buttons for header
     const headerButtonsWrapper = Div("header-buttons-wrapper"); 

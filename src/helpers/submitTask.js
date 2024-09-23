@@ -19,10 +19,11 @@ function submitTask() {
         priority: todoItem.getPriority(),
         project: todoItem.getProject(),
     }
-    
+
+    const projectDiv = document.querySelector(".project-div h2");
 
     addTaskToLocalStorage(task);
-    renderTasks();
+    renderTasks(projectDiv && projectDiv.textContent);
 }
 
 export default submitTask;

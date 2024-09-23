@@ -14,6 +14,7 @@ function createAddProjectDialog() {
     const colorButton = Button("color-button", "", "colorButton", "../alien-svgrepo-com.svg", "svg", toggleColorList);
     const projectNameLabel = Label("Project name", "visually-hidden", "projectNameInput");
     const projectNameInput = Input("text", "project-name-input", "Project name", "", "", "projectNameInput");
+    projectNameInput.setAttribute("required", true);
     const addProjectButtonsWrapper = Div("add-project-buttons-wrapper");
     const cancelProjectButton = Button("cancel-project-button", "Cancel", "cancelProjectButton", "", "");
     const addProjectButton = Button("dialog-add-project-button", "Add project", "addProjectButton", "", "", submitProject);
