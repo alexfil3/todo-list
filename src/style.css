@@ -279,6 +279,8 @@ body::-webkit-scrollbar-thumb {
     height: 24px;
     background-color: #2A2D34;
     border-radius: 50%;
+    fill: red;
+    stroke: red;
 }
 
 .close-aside-button {}

@@ -27,7 +27,7 @@ function Layout() {
     const mainTitleAndButtonsWrapper = Div("main-title-and-buttons-wrapper");
     const mainTitle = Title("h1", "Todo List", "main-title");
     const buttonsWrapper = Div("buttons-wrapper");
-    const themeButton = Button("theme-button", "", "themeButton", "../alien-svgrepo-com.svg", "svg");
+    const themeButton = Button("theme-button", "", "themeButton", "../icons/sprite.svg#icon-pencil", "svg");
     const closeButton = Button("close-aside-button", "", "closeAsideButton", "../alien-svgrepo-com.svg", "svg", closeAside);
 
     // create block with add task button and list of different sort of tasks
