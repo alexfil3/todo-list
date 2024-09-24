@@ -1,6 +1,5 @@
 import Project from "../pages/Project";
 import renderProjects from "./renderProjects";
-import renderTasks from "./renderTasks";
 
 function editProject() {
     const title = document.querySelector("#projectNameInput").value;
@@ -34,9 +33,6 @@ function editProject() {
     renderProjects();
 
     Project(title, svg, id);
-
-    // const projectDiv = document.querySelector(".project-div h2");
-    // renderTasks(projectDiv && projectDiv.textContent);
 }
 
 export default editProject;

@@ -1,6 +1,6 @@
 import { format, isAfter, isBefore, isToday } from "date-fns";
 
-function showDateValue(e, date) {
+function showDateValue(e) {
     const datePicker = document.querySelector(".datepicker-toggle");
     const dateText = document.querySelector(".datepicker-toggle-button p");
     const currentDate = new Date();

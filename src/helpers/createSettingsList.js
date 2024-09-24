@@ -88,4 +88,3 @@ function createSettingsList(list, listItemClassName, buttonClassName, date, prio
 }
 
 export default createSettingsList;
-// 
