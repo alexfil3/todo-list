@@ -1,12 +1,12 @@
 import { format, isAfter, isBefore, isToday } from "date-fns";
 
-function showDateValue(e) {
+function showDateValue(e, date) {
     const datePicker = document.querySelector(".datepicker-toggle");
     const dateText = document.querySelector(".datepicker-toggle-button p");
     const currentDate = new Date();
     const chosenDate = e.target.value;
-
     let formattedChosenDate;
+    
     if (chosenDate) {
         formattedChosenDate = format(chosenDate, "PPP");
     }

@@ -8,8 +8,9 @@ import Div from "../components/Div";
 import Button from "../components/Button";
 import createSettingsList from "./createSettingsList";
 import submitTask from "./submitTask";
+import editTask from "./editTask";
 
-function createAddTaskDialog() {
+function createAddTaskDialog(title, description, date, priority, project, id) {
     const dialog = Dialog("add-task-dialog"); 
     const form = Form("dialog", "add-task-form");
     const taskNameLabel = Label("Task name", "visually-hidden", "taskNameInput");
@@ -17,10 +18,23 @@ function createAddTaskDialog() {
     const taskDescriptionLabel = Label("Description", "visually-hidden", "taskDescriptionTextarea");
     const taskDescriptionTextarea = Textarea("task-description-textarea", "Description", "taskDescriptionTextarea");
     const settingsList = List("settings-list");
-    const createdList = createSettingsList(settingsList, "settings-list-item", "settings-list-button");
+    const createdList = createSettingsList(settingsList, "settings-list-item", "settings-list-button", date, priority, project);
     const addTaskButtonsWrapper = Div("add-task-buttons-wrapper");
     const cancelTaskButton = Button("cancel-task-button", "Cancel", "cancelTaskButton", "", "");
-    const addTaskButton = Button("dialog-add-task-button", "Add task", "addTaskButton", "", "", submitTask);
+    let taskButton;
+    if (title || description || date || priority || project) {
+        taskButton = Button("dialog-add-task-button", "Edit task", "editTaskButton", "", "", () => editTask(id));
+    } else {
+        taskButton = Button("dialog-add-task-button", "Add task", "addTaskButton", "", "", submitTask);
+    }
+
+    if (title) {
+        taskNameInput.value = title;
+    }
+
+    if (description) {
+        taskDescriptionTextarea.value = description;
+    }
 
     form.appendChild(taskNameLabel);
     form.appendChild(taskNameInput);
@@ -28,7 +42,7 @@ function createAddTaskDialog() {
     form.appendChild(taskDescriptionTextarea);
     form.appendChild(createdList);
     addTaskButtonsWrapper.appendChild(cancelTaskButton);
-    addTaskButtonsWrapper.appendChild(addTaskButton);
+    addTaskButtonsWrapper.appendChild(taskButton);
     form.appendChild(addTaskButtonsWrapper);
     dialog.appendChild(form);
 

@@ -2,10 +2,14 @@ function Dialog(className) {
     const dialog = document.createElement("dialog");
     dialog.classList.add(className);
 
-    dialog.addEventListener('click', function(event) {
+    dialog.addEventListener('click', (e) => {
+        if (e.target.closest("ul")) {
+            return
+        }
+        
         const rect = dialog.getBoundingClientRect();
-        const isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
-            rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+        const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+            rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
         
         if (!isInDialog) {
             dialog.close();

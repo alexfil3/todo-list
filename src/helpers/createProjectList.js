@@ -10,7 +10,6 @@ function createProjectList(list, listItemClassName, buttonClassName) {
     } else {
         projects = [{ id: "noProject", title: "No project", color: "", }];
     }
-    console.log(projects)
 
     projects.forEach(({id, title, color}) => {
         const listItem = ListItem(listItemClassName);

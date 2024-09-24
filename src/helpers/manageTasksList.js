@@ -9,7 +9,6 @@ function manageTasksList(e) {
         return;
     }
     const taskId = e.target.closest("li").id;
-    console.log(taskId)
 
     if (button.id === "completedButton") {
         const completedTask = allTasks.map(task => {
@@ -34,7 +33,14 @@ function manageTasksList(e) {
     }
 
     if (button.id === "editButton") {
-        openDialog(createAddTaskDialog, );
+        const taskIndex = allTasks.findIndex(task => task.id === taskId);
+        const title = allTasks[taskIndex].title;
+        const description = allTasks[taskIndex].description;
+        const date = allTasks[taskIndex].dueDate;
+        const priority = allTasks[taskIndex].priority;
+        const project = allTasks[taskIndex].project;
+
+        openDialog(createAddTaskDialog, title, description, date, priority, project, taskId);
     }
 }
 
