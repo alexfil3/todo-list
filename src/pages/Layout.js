@@ -43,7 +43,7 @@ function Layout() {
 
     // create two buttons for header
     const headerButtonsWrapper = Div("header-buttons-wrapper");
-    const changeProjectButton = Button("header-button-change", "", "headerButtonChange", "../alien-svgrepo-com.svg", "svg", editProject);
+    const changeProjectButton = Button("header-button-change", "", "headerButtonChange", "../alien-svgrepo-com.svg", "svg", () => openDialog(createAddProjectDialog, editProject));
     const deleteProjectButton = Button("header-button-delete", "", "headerButtonDelete", "../alien-svgrepo-com.svg", "svg", deleteProject);
 
     // append block with title and buttons
