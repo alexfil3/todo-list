@@ -10,6 +10,8 @@ import manageTasksList from "../helpers/manageTasksList";
 function Upcoming() {
     const main = document.querySelector("#main");
     main.textContent = "";
+    const header = document.querySelector("header");
+    header.classList.remove("flex");
 
     const array = Array.from(document.querySelectorAll(".pages-list-button"))
     removeClass(array, "", "active-page-button");

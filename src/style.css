@@ -235,7 +235,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header {
-    display: flex;
+    display: none;
     justify-content: flex-end;
     align-items: center;
     position: sticky;
@@ -717,4 +717,8 @@ body::-webkit-scrollbar-thumb {
 
 .project-svg {
     margin-bottom: 20px;
+}
+
+.flex {
+    display: flex;
 }

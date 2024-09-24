@@ -13,6 +13,8 @@ import createAddTaskDialog from "../helpers/createAddTaskDialog";
 import createAddProjectDialog from "../helpers/createAddProjectDialog";
 import renderProjects from "../helpers/renderProjects";
 import selectProjectToRender from "../helpers/selectProjectToRender";
+import editProject from "../helpers/editProject";
+import deleteProject from "../helpers/deleteProject";
 
 function Layout() {
     const container = document.querySelector("#container");
@@ -40,9 +42,9 @@ function Layout() {
     const projectList = List("projects-list", selectProjectToRender);
 
     // create two buttons for header
-    const headerButtonsWrapper = Div("header-buttons-wrapper"); 
-    const changeProjectButton = Button("header-button-change", "", "headerButtonChange", "../alien-svgrepo-com.svg", "svg");
-    const deleteProjectButton = Button("header-button-delete", "", "headerButtonDelete", "../alien-svgrepo-com.svg", "svg");
+    const headerButtonsWrapper = Div("header-buttons-wrapper");
+    const changeProjectButton = Button("header-button-change", "", "headerButtonChange", "../alien-svgrepo-com.svg", "svg", editProject);
+    const deleteProjectButton = Button("header-button-delete", "", "headerButtonDelete", "../alien-svgrepo-com.svg", "svg", deleteProject);
 
     // append block with title and buttons
     buttonsWrapper.appendChild(themeButton);

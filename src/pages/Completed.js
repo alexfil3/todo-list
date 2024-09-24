@@ -11,6 +11,8 @@ function Completed() {
     // find and clear content before appending child to it
     const main = document.querySelector("#main");
     main.textContent = "";
+    const header = document.querySelector("header");
+    header.classList.remove("flex");
 
     // remove active class from other buttons
     const array = Array.from(document.querySelectorAll(".pages-list-button"))

@@ -11,11 +11,14 @@ import manageTasksList from "../helpers/manageTasksList";
 function Project(name, color, id) {
     const main = document.querySelector("#main");
     main.textContent = "";
+    const header = document.querySelector("header");
+    header.classList.add("flex");
 
     const array = Array.from(document.querySelectorAll(".pages-list-button"))
     removeClass(array, "", "active-page-button");
 
     const div = Div("project-div");
+    div.setAttribute("id", id)
     const buttonSvg = Button("project-svg", "", "projectSvg", "../alien-svgrepo-com.svg", "svg");
     const svg = buttonSvg.querySelector("svg");
     svg.style.backgroundColor = color;
