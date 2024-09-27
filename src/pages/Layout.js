@@ -22,15 +22,22 @@ function Layout() {
     const headerAndMainWrapper = Div("header-and-main-wrapper");
     const header = Header("header");
     const main = Main("main", "main");
+    
+    const themeSvg = document.querySelector("#theme");
+    const menuSvg = document.querySelector("#menu");
+    const plusSvg = document.querySelector("#plus");
 
     const mainTitleAndButtonsWrapper = Div("main-title-and-buttons-wrapper");
     const mainTitle = Title("h1", "Todo List", "main-title");
     const buttonsWrapper = Div("buttons-wrapper");
-    const themeButton = Button("theme-button", "", "themeButton", "#icon-pencil", "svg");
-    const closeButton = Button("close-aside-button", "", "closeAsideButton", "../alien-svgrepo-com.svg", "svg", closeAside);
+    const themeButton = Button("theme-button", "", "themeButton", "", "svg");
+    themeButton.appendChild(themeSvg);
+    const closeButton = Button("close-aside-button", "", "closeAsideButton", "", "svg", closeAside);
+    closeButton.appendChild(menuSvg);
 
     const addTaskAndPagesWrapper = Div("add-task-and-pages-wrapper");
-    const addTaskButton = Button("add-task-button", "Add task", "addTask", "../alien-svgrepo-com.svg", "svg", () => openDialog(createAddTaskDialog));
+    const addTaskButton = Button("add-task-button", "Add task", "addTask", "", "svg", () => openDialog(createAddTaskDialog));
+    addTaskButton.insertBefore(plusSvg, addTaskButton.firstChild);
     const pagesList = List("pages-list", loadPage);
     const createdList = createPagesList(pagesList, "pages-list-item", "pages-list-button");
 
