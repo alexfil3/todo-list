@@ -1,6 +1,4 @@
 :root {
-    /* text sizes */
-
     --14px: 0.875;
     --16px: 1rem;
     --17px: 1.0625rem;
@@ -10,8 +8,6 @@
     --21px: 1.3125rem;
     --24px: 1.5rem;
     --48px: 3rem;
-
-    /* color palette */
 
     --main-bg-color: #121212;
     --secondary-bg-color: #1B1F3B;
